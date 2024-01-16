@@ -53,10 +53,6 @@ const profile = (req,res) => {
     return res.render('profile');
 }
 
-const create = (req,res) => {
-    return res.render('create');
-}
-
 module.exports = {
-    login, register, registerRecord , dashboard , loginUser , profile , create
+    login, register, registerRecord , dashboard , loginUser , profile 
 }
