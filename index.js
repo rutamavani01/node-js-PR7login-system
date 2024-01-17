@@ -1,23 +1,24 @@
+const database = require('./config/db');
 const express = require('express');
 const port = 8000;
 const app = express();
 app.set('view engine', 'ejs');
+app.use(express.urlencoded());    
 
-const database = require('./config/db');
+const path = require('path');               
 
-app.use('/',require('./routes/registerRoutes'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 
-const path = require('path');
 
-app.use('/public',express.static(path.join(__dirname, 'public')));
 
 const passport = require('passport');
-const passportLocal = require('passport-local');
-const session = require('express-session');
+const passportLocal = require('./config/passportLocal');
+const session = require('express-session');            
 
 app.use(session({
     name : 'instagram',
-    secret :'app',
+    secret :'app',                  
     saveUninitialized : true,
     resave : true,
     cookie : {
@@ -25,11 +26,12 @@ app.use(session({
     }
 }))
 
-app.use(express.urlencoded());
 
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(passport.setUser);
+app.use(passport.setUser);
+
+app.use('/',require('./routes/registerRoutes'));
 
 app.listen(port,(err)=>{                 
     if(err){                   

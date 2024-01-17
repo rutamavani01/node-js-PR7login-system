@@ -1,12 +1,12 @@
 const registerModel = require('../models/registerModel');
 
 const login = (req, res) => {
-    return res.render('login');
-
-    // if(res.locals.users){
-    //     return res.redirect('/dashboard');
-    // }
     // return res.render('login');
+console.log(res.locals.users);
+    if(res.locals.users){
+        return res.redirect('/dashboard');
+    }
+    return res.render('login');
 }
 
 const register = (req, res) => {
@@ -49,10 +49,15 @@ const loginUser = (req,res) => {
     return res.redirect('/dashboard');
 }
 
-const profile = (req,res) => {
-    return res.render('profile');
+const logout = async(req,res) => {
+    req.logout((err)=>{
+        if(err){
+            return false
+        }
+        return res.redirect('/');
+    })
 }
 
 module.exports = {
-    login, register, registerRecord , dashboard , loginUser , profile 
+    login, register, registerRecord , dashboard , loginUser  , logout
 }

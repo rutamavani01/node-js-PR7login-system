@@ -262,272 +262,283 @@
     text-align: center;
   }
 
-  	/* Dropdown Button */
-.dropbtn {
-  font-size:12px;
-}
+  /* Dropdown Button */
+  .dropbtn {
+    font-size: 12px;
+  }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: +99;
-}
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: +99;
+  }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: +999;
-  font-size: 16px;
-  
-}
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: +999;
+    font-size: 16px;
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  z-index: +999;
-  display: block;
-}
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown:hover .dropdown-content {display: block;}
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    z-index: +999;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 </style>
 
 <body>
   <div class="container">
-    <section class="top-bar">
-      <button class="top-bar__back-btn"><a href="/dashboard"><i class="fa-solid fa-arrow-left"></i></a></button>
-      <div class="top-bar__title">
-        <h1 class="top-bar__title__text">instagram</h1>
-        <img class='top-bar__title__verified-icon'
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/kisspng-social-media-instagram-verified-badge-symbol-compu-5b1eedb5aba638.1612204615287535897031.jpg"
-          alt="verified-icon">
-      </div>
-      <button class="top-bar__menu-btn">
-        <div class="dropdown dot">
-          <a class="dropbtn"> <i class="fa-solid fa-gear"></i></i>
-          </a>
-          <div class="dropdown-content">
-            <a href="#">Log Out</a>
-            <a href="#">Switch account</a>
+    <% record.map((v)=>{ %>
+      <section class="top-bar">
+        <button class="top-bar__back-btn"><a href="/dashboard"><i class="fa-solid fa-arrow-left"></i></a></button>
+        <div class="top-bar__title">
+          <h1 class="top-bar__title__text">
+            <%= locals.users.email %>
+          </h1>
+          <img class='top-bar__title__verified-icon'
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/kisspng-social-media-instagram-verified-badge-symbol-compu-5b1eedb5aba638.1612204615287535897031.jpg"
+            alt="verified-icon">
+        </div>
+        <button class="top-bar__menu-btn">
+          <div class="dropdown dot">
+            <a class="dropbtn"> <i class="fa-solid fa-gear"></i></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="/logout">Log Out</a>
+              <a href="#">Switch account</a>
+            </div>
           </div>
-        </div>
-      </button>
-    </section>
-    <section class="stats">
-      <div class="stats__img-holder"
-        style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/instagram-logo.png');">
-      </div>
-      <div class="stats__data">
-        <div class="stats__data__point">
-          <div class="stats__data__point__value">6,126</div>
-          <div class="stats__data__point__description">Posts</div>
-        </div>
-        <div class="stats__data__point">
-          <div class="stats__data__point__value">317 M</div>
-          <div class="stats__data__point__description">Followers</div>
-        </div>
-        <div class="stats__data__point">
-          <div class="stats__data__point__value">225</div>
-          <div class="stats__data__point__description">Following</div>
-        </div>
-      </div>
-    </section>
-    <section class="description">
-      <h2 class="decription__title">Instagram</h2>
-      <p>
-        Bringing you closer to the people and things you love. ❤️
-      </p>
-      <a href="https://www.antibullyingpro.com/resources">www.antibullyingpro.com/resources</a>
-    </section>
-    <section class="actions">
-      <button class="actions__btn actions__btn--active"><a href="" class="actions__btn--active">Follow</a></button>
-      <button class="actions__btn"><a href="" class="">Message</a></button>
-      <button class="actions__btn actions__btn--icon">
-        <i class="fa-solid fa-arrow-down  material-icons"></i>
-      </button>
-    </section>
-    <section class="stories">
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60');">
+        </button>
+      </section>
+      <% }) %>
+
+        <section class="stats">
+          <div class="stats__img-holder"
+            style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/instagram-logo.png');">
           </div>
-        </div>
-        <p class="stories__single__description">Game On</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stats__data">
+            <div class="stats__data__point">
+              <div class="stats__data__point__value">6,126</div>
+              <div class="stats__data__point__description">Posts</div>
+            </div>
+            <div class="stats__data__point">
+              <div class="stats__data__point__value">317 M</div>
+              <div class="stats__data__point__description">Followers</div>
+            </div>
+            <div class="stats__data__point">
+              <div class="stats__data__point__value">225</div>
+              <div class="stats__data__point__description">Following</div>
+            </div>
           </div>
-        </div>
-        <p class="stories__single__description">Take a Stand</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+        </section>
+        <section class="description">
+          <h2 class="decription__title">Instagram</h2>
+          <p>
+            Bringing you closer to the people and things you love. ❤️
+          </p>
+          <a href="https://www.antibullyingpro.com/resources">www.antibullyingpro.com/resources</a>
+        </section>
+        <section class="actions">
+          <button class="actions__btn actions__btn--active"><a href="" class="actions__btn--active">Follow</a></button>
+          <button class="actions__btn"><a href="" class="">Message</a></button>
+          <button class="actions__btn actions__btn--icon">
+            <i class="fa-solid fa-arrow-down  material-icons"></i>
+          </button>
+        </section>
+        <section class="stories">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1431512284068-4c4002298068?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">Game On</p>
           </div>
-        </div>
-        <p class="stories__single__description">You got this</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">Take a Stand</p>
           </div>
-        </div>
-        <p class="stories__single__description">#skater girl</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">You got this</p>
           </div>
-        </div>
-        <p class="stories__single__description">Game On</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">#skater girl</p>
           </div>
-        </div>
-        <p class="stories__single__description">Take a Stand</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">Game On</p>
           </div>
-        </div>
-        <p class="stories__single__description">You got this</p>
-      </div>
-      <div class="stories__single">
-        <div class="stories__single__img-holder">
-          <div class="stories__single__img-holder__inner"
-            style="background-image: url('https://images.unsplash.com/photo-1518144591331-17a5dd71c477?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">Take a Stand</p>
           </div>
-        </div>
-        <p class="stories__single__description">#skater girl</p>
-      </div>
-    </section>
-    <section class="tabs">
-      <button class="tabs__btn tabs__btn--active">
-        <a href="" class='tabs__btn__icon'>
-          <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/grid-icon.png"
-            alt="grid icon">
-        </a>
-      </button>
-      <button class="tabs__btn">
-        <a href="" class='tabs__btn__icon'>
-          <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/igtv-icon.png"
-            alt="igtv icon">
-        </a>
-      </button>
-      <button class="tabs__btn">
-        <a href="" class='tabs__btn__icon'>
-          <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/smile-icon.png"
-            alt="smile icon">
-        </a>
-      </button>
-      <button class="tabs__btn">
-        <a href="">
-          <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/tagged-icon.png"
-            alt="tagged icon">
-        </a>
-      </button>
-    </section>
-    <section class="grid">
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1548032885-b5e38734688a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1519821172144-4f87d85de2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1520454974749-611b7248ffdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1504681869696-d977211a5f4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1522083165195-3424ed129620?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1516893842880-5d8aada7ac05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1539108826694-1297410cdda9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1529690982439-df5e60eb5a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1491056792553-4704d261e3ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1562138888-3d0a63b21dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1568641134257-ab85695f67e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1545385095-f5a14a9160d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1547462713-a208daf9d997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-      <a href="" class="grid__photo"
-        style="background-image: url('https://images.unsplash.com/photo-1522586217274-9096ee38a805?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
-    </section>
-    <section class="bottom-bar">
-      <button class="bottom-bar__btn">
-        <a href="/dashboard">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/home-icon.png" class="bottom-bar__btn__icon"
-            alt="home icon">
-        </a>
-      </button>
-      <button class="bottom-bar__btn bottom-bar__btn--active">
-        <a href="">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/search-icon.png" class="bottom-bar__btn__icon"
-            alt="search icon">
-        </a>
-      </button>
-      <button class="bottom-bar__btn">
-        <a href="/create">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/add-icon.png" class="bottom-bar__btn__icon"
-            alt="add icon">
-        </a>
-      </button>
-      <button class="bottom-bar__btn">
-        <a href=""> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/heart-icon.png"
-            class="bottom-bar__btn__icon" alt="heart icon"></a>
-      </button>
-      <button class="bottom-bar__btn">
-        <a href="/profile"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/profile-picture.png"
-            class="bottom-bar__btn__icon" alt="profile picture"></a>
-      </button>
-    </section>
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">You got this</p>
+          </div>
+          <div class="stories__single">
+            <div class="stories__single__img-holder">
+              <div class="stories__single__img-holder__inner"
+                style="background-image: url('https://images.unsplash.com/photo-1518144591331-17a5dd71c477?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');">
+              </div>
+            </div>
+            <p class="stories__single__description">#skater girl</p>
+          </div>
+        </section>
+        <section class="tabs">
+          <button class="tabs__btn tabs__btn--active">
+            <a href="" class='tabs__btn__icon'>
+              <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/grid-icon.png"
+                alt="grid icon">
+            </a>
+          </button>
+          <button class="tabs__btn">
+            <a href="" class='tabs__btn__icon'>
+              <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/igtv-icon.png"
+                alt="igtv icon">
+            </a>
+          </button>
+          <button class="tabs__btn">
+            <a href="" class='tabs__btn__icon'>
+              <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/smile-icon.png"
+                alt="smile icon">
+            </a>
+          </button>
+          <button class="tabs__btn">
+            <a href="">
+              <img class='tabs__btn__icon' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/tagged-icon.png"
+                alt="tagged icon">
+            </a>
+          </button>
+        </section>
+        <section class="grid">
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1548032885-b5e38734688a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1519821172144-4f87d85de2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1509233725247-49e657c54213?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1520454974749-611b7248ffdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1504681869696-d977211a5f4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1522083165195-3424ed129620?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1516893842880-5d8aada7ac05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1539108826694-1297410cdda9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1529690982439-df5e60eb5a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1491056792553-4704d261e3ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1562138888-3d0a63b21dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1568641134257-ab85695f67e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1545385095-f5a14a9160d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1547462713-a208daf9d997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+          <a href="" class="grid__photo"
+            style="background-image: url('https://images.unsplash.com/photo-1522586217274-9096ee38a805?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');"></a>
+        </section>
+        <section class="bottom-bar">
+          <button class="bottom-bar__btn">
+            <a href="/dashboard">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/home-icon.png"
+                class="bottom-bar__btn__icon" alt="home icon">
+            </a>
+          </button>
+          <button class="bottom-bar__btn bottom-bar__btn--active">
+            <a href="">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/search-icon.png"
+                class="bottom-bar__btn__icon" alt="search icon">
+            </a>
+          </button>
+          <button class="bottom-bar__btn">
+            <a href="/create">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/add-icon.png" class="bottom-bar__btn__icon"
+                alt="add icon">
+            </a>
+          </button>
+          <button class="bottom-bar__btn">
+            <a href=""> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/heart-icon.png"
+                class="bottom-bar__btn__icon" alt="heart icon"></a>
+          </button>
+          <button class="bottom-bar__btn">
+            <a href="/profile"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2053557/profile-picture.png"
+                class="bottom-bar__btn__icon" alt="profile picture"></a>
+          </button>
+        </section>
   </div>
 
 </body>

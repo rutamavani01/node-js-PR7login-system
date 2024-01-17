@@ -8,7 +8,8 @@
 <body>
     <center>
         <!-- Code for viewing the Post -->
-	<form method="post" action="/addRecord">
+	<form method="post" action="/addRecord" enctype="multipart/form-data">
+        <input type="hidden" value="<%= single.id %>" name="editid">
        <div class="card"> 
             <div class="top"> 
                 <div class="userDetails"> 
@@ -22,9 +23,12 @@
                         </div> 
                     </div> 
                     <div>
-                        <p>Username <input type="text" name="name"></p> 
-                        <p>Add Caption <input type="text" name="caption"></p> 
+                        <!-- <p>Username <input type="text" name="name"></p>  -->
+                        <p>Add Caption <input type="text" value="<%= single.caption %>" name="caption"></p> 
                         <p>Location</p> 
+                       <p>
+                        <img src="<%= single.image %>" >
+                        <input type="file" name="image"></p>
                     </div>
                 </div> 
                 <div> 
@@ -32,11 +36,6 @@
                         <i class="fas fa-ellipsis-h"></i> 
                     </span> 
                 </div> 
-            </div> 
-            <div class="imgBx"> 
-                <img src= ""
-                    alt="post-1" class="cover">  <br>
-                    <input type="file" name="image">
             </div> 
             <input type="submit">
         </div> 
