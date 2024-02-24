@@ -306,7 +306,6 @@
 
 <body>
   <div class="container">
-    <% record.map((v)=>{ %>
       <section class="top-bar">
         <button class="top-bar__back-btn"><a href="/dashboard"><i class="fa-solid fa-arrow-left"></i></a></button>
         <div class="top-bar__title">
@@ -322,13 +321,13 @@
             <a class="dropbtn"> <i class="fa-solid fa-gear"></i></i>
             </a>
             <div class="dropdown-content">
-              <a href="/logout">Log Out</a>
-              <a href="#">Switch account</a>
+              <a href="/logout">Log Out</a>  
+              <a href="/">Switch account</a>
             </div>
           </div>
         </button>
       </section>
-      <% }) %>
+   
 
         <section class="stats">
           <div class="stats__img-holder"

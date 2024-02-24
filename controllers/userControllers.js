@@ -15,8 +15,7 @@ const addRecord = async (req, res) => {
             // name : req.body.name,
             caption: req.body.caption,
             image: imagename
-        })
-        console.log(insertData);
+        }) 
         return res.redirect('/dashboard');
     } catch (error) {
         console.log(error);
@@ -68,7 +67,7 @@ const deleteRecord = async (req, res) => {
 const editRecord = async(req,res)=>{
     try { 
         let editData = await userModels.findById(req.query.editId);
-        return res.render('create',{
+        return res.render('edit',{
             single : editData
         })
     } catch (error) {
@@ -80,17 +79,13 @@ const editRecord = async(req,res)=>{
 const updateRecord = async(req,res) => {
     if(req.file){
         try {
-            let oldImage = await userModels.findById(req.body.editid)
-            fs.unlinkSync(oldImage.image);
-        } catch (error) {
-            console.log(error);
-            return false
-        }
-
-        try {
-            let editData = await userModels.findByIdAndUpdate(req.query.editid,{
-                caption : req.query.caption,
+                let oldimage = await userModels.findByIdAndUpdate(req.body.editid);
+                fs.unlinkSync(oldimage.image);
+            
+            let editData = await userModels.findByIdAndUpdate(req.body.editid,{
+                caption : req.body.caption,
                 image : req.file.path
+
             })
             console.log("Data edited successfully");
             return res.redirect('/dashboard');
@@ -100,16 +95,17 @@ const updateRecord = async(req,res) => {
         }
     }else{
         try {
-            let editData = await userModels.findById(req.query.editid)
-            let update = await userModels.findByIdAndUpdate(req.body.editid,{
-                caption : req.query.caption,
+            let editData = await userModels.findById(req.body.editid);
+            let updateData = await userModels.findByIdAndUpdate(req.body.editid,{
+                caption : req.body.caption,
                 image : editData.image
+
             })
-            console.log("Data edited!");
+            console.log("Data edited successfully");
             return res.redirect('/dashboard');
         } catch (error) {
-         console.log(error);
-         return false;   
+            console.log(error);
+            return false;
         }
     }
 }
